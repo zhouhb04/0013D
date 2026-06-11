@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "PingFang SC", "PingFang TC", "PingFang HK", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased transition-colors duration-300;
+  }
+}
+
+/* Custom Webkit scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.6);
+}
+
+/* Custom Glassmorphism styles */
+.glass-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+}
+
+.glass-dark {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Liquid Glass Effects for Premium UI */
+.liquid-glass-light {
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(28px) saturate(220%);
+  -webkit-backdrop-filter: blur(28px) saturate(220%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 
+    0 10px 40px rgba(31, 38, 135, 0.04),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.02);
+}
+
+.liquid-glass-dark {
+  background: rgba(15, 15, 20, 0.52);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* Fluid Blob animations for liquid feel */
+@keyframes fluid-blob-one {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(45px, -55px) scale(1.12); }
+  66% { transform: translate(-35px, 40px) scale(0.92); }
+}
+
+@keyframes fluid-blob-two {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-60px, 60px) scale(1.18); }
+}
+
+.animate-fluid-1 {
+  animation: fluid-blob-one 14s infinite alternate ease-in-out;
+}
+
+.animate-fluid-2 {
+  animation: fluid-blob-two 18s infinite alternate ease-in-out;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(900deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}

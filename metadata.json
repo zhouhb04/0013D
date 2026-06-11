@@ -1,0 +1,6 @@
+{
+  "name": "3D相机视角图片生成器",
+  "description": "上传图片，通过3D相机控制器调整拍摄角度、虚拟焦距和缩放，一键调用Gemini API渲染新视角图片。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
